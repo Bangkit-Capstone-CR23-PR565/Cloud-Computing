@@ -16,13 +16,13 @@ export const Register = async(req,res) => {
             phone: phone
         }
     });
-    // function validatePhoneNumber(phoneNumber) {
-    //   const cleanedNumber = phoneNumber.replace(/\\\\D/g, "");
-    //   if (!validator.isMobilePhone(cleanedNumber, "id-ID")) {
-    //     return false;
-    //   }
-    //   return true;
-    // }
+    function validatePhoneNumber(phoneNumber) {
+      const cleanedNumber = phoneNumber.replace(/\\\\D/g, "");
+      if (!validator.isMobilePhone(cleanedNumber, "id-ID")) {
+        return false;
+      }
+      return true;
+    }
 
     try {
         if (validator.isEmail(req.body.email) === false) {
@@ -31,9 +31,9 @@ export const Register = async(req,res) => {
         if (emailAlreadyExist) {
             throw { code: 400, message: "Email already registered." };
         }
-        // if (!validatePhoneNumber(req.body.phone)) {
-        //     throw { code: 400, message: "Invalid phone number." };
-        // }
+        if (!validatePhoneNumber(req.body.phone)) {
+            throw { code: 400, message: "Invalid phone number." };
+        }
         if (phoneAlreadyExist) {
             throw { code: 400, message: "Phone number already registered." };
         }
@@ -81,10 +81,10 @@ export const Login = async(req,res) =>{
         const location = user[0].location;
         const category_interest = user[0].category_interest;
         const accessToken = jwt.sign({id, email, phone, full_name, location, category_interest}, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: '1d'
+            expiresIn: '30d'
         });
         const refreshToken = jwt.sign({id, email, phone, full_name, location, category_interest}, process.env.REFRESH_TOKEN_SECRET, {
-            expiresIn: '1d'
+            expiresIn: '30d'
         });
         await Users.update({refresh_token: refreshToken}, {
             where:{
@@ -118,7 +118,7 @@ export const refreshToken = async(req,res) => {
         if (!user || user.refresh_token !== refreshToken)
             return res.status(401).json({msg:"Unauthorized."});
         const accessToken = jwt.sign({id: user.id, email: user.email, phone: user.phone, full_name: user.full_name, location: user.location, category_interest: user.category_interest}, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: '60s'
+            expiresIn: '30d'
         });
         res.json({accessToken});
     } catch (error) {

@@ -101,7 +101,7 @@ export const deleteRating = async (req, res) => {
   try {
     const ratingExist = await Rating.findOne({
       where: {
-          id: req.body.id,
+          id: req.params.id,
       }
     });
     if (!ratingExist) {
@@ -109,7 +109,7 @@ export const deleteRating = async (req, res) => {
     }
     await Rating.destroy({
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     });
     res.status(200).json({ message: "Rating berhasil dihapus." });

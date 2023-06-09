@@ -5,8 +5,8 @@ import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/controller_refreshtoken.js";
 import { getAllEvents, getEventById } from "../controllers/controller_event.js";
 import { getRatings, getRatingById, postRating, deleteRating, getRatingsByEventId, getRatingsByUserId } from "../controllers/controller_rating.js";
-import { getUserLikes, getUserLikeById, postUserLike, deleteUserLike } from "../controllers/controller_user_like.js";
-import { getRecResults, getRecResultById } from "../controllers/controller_recommendation_result.js";
+import { getUserLikes, postUserLike, deleteUserLike } from "../controllers/controller_user_like.js";
+import { getRecResults } from "../controllers/controller_recommendation_result.js";
 
 const router = express.Router();
 
@@ -30,16 +30,14 @@ router.get("/ratings/:id", getRatingById);
 router.get("/events/:event_id/ratings", getRatingsByEventId);
 router.get("/users/:user_id/ratings", getRatingsByUserId);
 router.post("/ratings", verifyToken, postRating);
-router.delete("/ratings", verifyToken, deleteRating);
+router.delete("/ratings/:id", verifyToken, deleteRating);
 
 // User Likes Routes
 router.get("/users/:user_id/likes", getUserLikes);
-router.get("/users/:user_id/likes/:id", getUserLikeById);
 router.post("/users/likes", verifyToken, postUserLike);
-router.delete("/users/likes", verifyToken, deleteUserLike);
+router.delete("/users/:user_id/likes/:event_id", verifyToken, deleteUserLike);
 
 // Recommendation Results Routes
 router.get("/users/:user_id/recommendation-results", getRecResults);
-router.get("/users/:user_id/recommendation-results/:id", getRecResultById);
 
 export default router;

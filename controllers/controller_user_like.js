@@ -3,43 +3,30 @@ import Event from "../models/model_event.js";
 
 export const getUserLikes = async (req, res) => {
   try {
-    const userLike = await UserLike.findAll({
+    const userLikes = await UserLike.findAll({
       where: {
         user_id: req.params.user_id
       }
     });
-    res.status(200).json(userLike);
+    if (!userLikes) {
+      return res.status(404).json({ message: "User likes not found" });
+    }
+    const eventIds = userLikes.map((like) => like.event_id);
+    const showEvents = await Event.findAll({
+      where: {
+        id: eventIds
+      }
+    });
+    if (!showEvents) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+    res.status(200).json(showEvents);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 };
 
-export const getUserLikeById = async (req, res) => {
-  try {
-    const userLike = await UserLike.findOne({
-      where: {
-        user_id: req.params.user_id,
-        id: req.params.id
-      }
-    });
-    if (!userLike) {
-      return res.status(404).json({ message: "User like not found" });
-    }
-    const showEvent = await Event.findOne({
-      where: {
-        id: userLike.event_id
-      }
-    });
-    if (!showEvent) {
-      return res.status(404).json({ message: "Event not found" });
-    }
-    res.status(200).json(showEvent);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server Error" });
-  }
-};
 
 export const postUserLike = async (req, res) => {
   try {
@@ -67,7 +54,8 @@ export const deleteUserLike = async (req, res) => {
   try {
     const userLikeExist = await UserLike.findOne({
       where: {
-          id: req.body.id,
+          user_id: req.params.user_id,
+          event_id: req.params.event_id
       }
     });
     if (!userLikeExist) {
@@ -75,7 +63,8 @@ export const deleteUserLike = async (req, res) => {
     }
     await UserLike.destroy({
       where: {
-        id: req.body.id
+        user_id: req.params.user_id,
+        event_id: req.params.event_id
       }
     });
     res.status(200).json({ message: "User like berhasil dihapus." });
