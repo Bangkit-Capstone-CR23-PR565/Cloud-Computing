@@ -33,7 +33,12 @@ const Users = db.define('users', {
     },
     category_interest: {
         type: DataTypes.JSON,
-        allowNull: false
+        allowNull: false,
+        charset: 'utf8mb4',
+        collate: 'utf8mb4_unicode_ci'
+    },
+    refresh_token:{
+        type: DataTypes.TEXT
     },
     created_at: {
         type: DataTypes.DATE,

@@ -2,7 +2,7 @@ import express from "express";
 import db from "./database/database.js";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import router from "./routes/index.js";
+import router from "./routes/routes.js";
 dotenv.config();
 const app = express();
 

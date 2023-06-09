@@ -1,5 +1,6 @@
 import UserModel from "../models/model_user.js";
 import jwt from "jsonwebtoken";
+const oneMonthInSeconds = 30 * 24 * 60 * 60;
 
 export const refreshToken = async(req,res)=>{
     try {
@@ -17,7 +18,7 @@ export const refreshToken = async(req,res)=>{
             const name = user[0].name;
             const email = user[0].email;
             const accessToken =  jwt.sign({userID,name, email},process.env.ACCESS_TOKEN_SECRET,{
-                expiresIn:'1d'
+                expiresIn: oneMonthInSeconds
             });
             res.json({accessToken});
         })
