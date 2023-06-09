@@ -1,6 +1,6 @@
 import express from "express";
 import { Register, Login, Logout } from "../controllers/controller_auth.js";
-import { getUsers, getUserById, updatePassword, updateProfile } from "../controllers/controller_user.js";
+import { getUsers, getUserById } from "../controllers/controller_user.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/controller_refreshtoken.js";
 import { getAllEvents, getEventById } from "../controllers/controller_event.js";

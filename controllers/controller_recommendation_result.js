@@ -1,9 +1,11 @@
 import Event from "../models/model_event.js";
+import { Sequelize } from 'sequelize';
+import { Op } from 'sequelize';
 
 export const getRecResults = async (req, res) => {
   try {
-    const { user_id } = req.params.user_id;
-    const response = await fetch(`https://35.220.199.159/event/top-ranking-predictions/${user_id}`);
+    const { user_id } = req.params;
+    const response = await fetch(`http://35.220.199.159/events/top-ranking-predictions/${user_id}`);
     const recommendations = await response.json();
 
     // Sort the recommendations array based on rating_prediction
@@ -11,10 +13,13 @@ export const getRecResults = async (req, res) => {
 
     const eventIds = recommendations.map((recommendation) => recommendation.id);
 
+    const eventOrder = eventIds.join(',');
+
     const events = await Event.findAll({
       where: {
         id: eventIds,
       },
+      order: Sequelize.literal(`FIELD(id, ${eventOrder})`), // Sort by custom order based on eventOrder
     });
 
     res.status(200).json(events);
@@ -23,6 +28,8 @@ export const getRecResults = async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 };
+
+
 
 export const getRecResultById = async (req, res) => {
   try {
