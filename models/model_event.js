@@ -9,47 +9,48 @@ const Event = db.define(
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     name: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     category: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     image_url: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     stand_available: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
     },
     price_per_stand: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
     },
     like_count: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false, // Set allowNull to false
+      defaultValue: 0, // Set defaultValue to 0
     },
     location: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     start_date: {
       type: DataTypes.DATEONLY,
-      allowNull: true
+      allowNull: true,
     },
     end_date: {
       type: DataTypes.DATEONLY,
-      allowNull: true
+      allowNull: true,
     },
     created_at: {
       type: DataTypes.DATE,
