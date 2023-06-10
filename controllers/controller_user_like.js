@@ -15,7 +15,8 @@ export const getUserLikes = async (req, res) => {
     const showEvents = await Event.findAll({
       where: {
         id: eventIds
-      }
+      },
+      order: [['id', 'DESC']] // Sort by the 'id' column in the 'Event' table
     });
     if (!showEvents) {
       return res.status(404).json({ message: "Event not found" });
@@ -26,7 +27,6 @@ export const getUserLikes = async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 };
-
 
 export const postUserLike = async (req, res) => {
   try {
