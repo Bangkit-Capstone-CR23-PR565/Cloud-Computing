@@ -32,17 +32,22 @@ export const postUserLike = async (req, res) => {
   try {
     const likeAlreadyExist = await UserLike.findOne({
       where: {
-          user_id: req.params.user_id,
-          event_id: req.body.event_id
+        user_id: req.params.user_id,
+        event_id: req.body.event_id
       }
     });
     if (likeAlreadyExist) {
       return res.status(400).json({ message: "Event sudah dilike oleh user." });
     }
+
     const userLike = await UserLike.create({
       user_id: req.params.user_id,
       event_id: req.body.event_id
     });
+
+    // Update the like_count column in the Event table
+    await Event.increment('like_count', { where: { id: req.body.event_id } });
+
     res.status(201).json(userLike);
   } catch (error) {
     console.error(error);
@@ -54,19 +59,24 @@ export const deleteUserLike = async (req, res) => {
   try {
     const userLikeExist = await UserLike.findOne({
       where: {
-          user_id: req.params.user_id,
-          event_id: req.params.event_id
+        user_id: req.params.user_id,
+        event_id: req.params.event_id
       }
     });
     if (!userLikeExist) {
       return res.status(400).json({ message: "User like tidak ada/sudah dihapus." });
     }
+
     await UserLike.destroy({
       where: {
         user_id: req.params.user_id,
         event_id: req.params.event_id
       }
     });
+
+    // Update the like_count column in the Event table by decrementing
+    await Event.decrement('like_count', { where: { id: req.params.event_id } });
+
     res.status(200).json({ message: "User like berhasil dihapus." });
   } catch (error) {
     console.error(error);
