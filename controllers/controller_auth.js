@@ -17,7 +17,7 @@ export const Register = async(req,res) => {
         }
     });
     function validatePhoneNumber(phoneNumber) {
-      const cleanedNumber = phoneNumber.replace(/\\\\D/g, "");
+      const cleanedNumber = phoneNumber.replace(/\\\\\\\\D/g, "");
       if (!validator.isMobilePhone(cleanedNumber, "id-ID")) {
         return false;
       }
@@ -36,6 +36,9 @@ export const Register = async(req,res) => {
         }
         if (phoneAlreadyExist) {
             throw { code: 400, message: "Phone number already registered." };
+        }
+        if (password.length < 8) {
+            throw { code: 400, message: "Password must be at least 8 characters." };
         }
         if (password !== confPassword) {
             return res.status(400).json({msg:"Password doesn't match."});
