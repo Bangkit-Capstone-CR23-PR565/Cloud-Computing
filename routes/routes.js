@@ -34,7 +34,7 @@ router.delete("/ratings/:id", verifyToken, deleteRating);
 
 // User Likes Routes
 router.get("/users/:user_id/likes", getUserLikes);
-router.post("/users/likes", verifyToken, postUserLike);
+router.post("/users/:user_id/likes", verifyToken, postUserLike);
 router.delete("/users/:user_id/likes/:event_id", verifyToken, deleteUserLike);
 
 // Recommendation Results Routes

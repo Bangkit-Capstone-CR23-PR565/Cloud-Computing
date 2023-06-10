@@ -86,7 +86,6 @@ Content-Type: application/json
 
 //content
 {   
-    "user_id": 6,
     "event_id": 209
 }
 

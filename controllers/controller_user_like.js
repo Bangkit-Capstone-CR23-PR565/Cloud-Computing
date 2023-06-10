@@ -32,7 +32,7 @@ export const postUserLike = async (req, res) => {
   try {
     const likeAlreadyExist = await UserLike.findOne({
       where: {
-          user_id: req.body.user_id,
+          user_id: req.params.user_id,
           event_id: req.body.event_id
       }
     });
@@ -40,7 +40,7 @@ export const postUserLike = async (req, res) => {
       return res.status(400).json({ message: "Event sudah dilike oleh user." });
     }
     const userLike = await UserLike.create({
-      user_id: req.body.user_id,
+      user_id: req.params.user_id,
       event_id: req.body.event_id
     });
     res.status(201).json(userLike);

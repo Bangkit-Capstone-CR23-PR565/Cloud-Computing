@@ -29,14 +29,12 @@ Services available:
   <pre>GET  /events/{event_id}/ratings</pre>
   <pre>GET  /users/{user_id}/ratings</pre>
   <pre>POST /ratings</pre>
-  <pre>DEL  /ratings</pre>
+  <pre>DEL  /ratings/{rating_id}</pre>
 
 - User Likes
   <pre>GET  /users/{user_id}/likes</pre>
-  <pre>GET  /users/{user_id}/likes/{like_id}</pre>
-  <pre>POST /users/likes</pre>
-  <pre>DEL  /users/likes</pre>
+  <pre>POST /users/{user_id}/likes</pre>
+  <pre>DEL  /users/{user_id}/likes/{event_id}</pre>
 
-- Recommendation Results (not yet done)
+- Recommendation Results
   <pre>GET  /users/{user_id}/recommendation-results</pre>
-  <pre>GET  /users/{user_id}/recommendation-results/{event_id}</pre>
