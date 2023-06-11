@@ -17,28 +17,27 @@ const Users = db.define('users', {
     phone: {
         type: DataTypes.STRING(255),
         unique: true,
-        allowNull: false
+        allowNull: true
     },
     password: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     },
     full_name: {
         type: DataTypes.STRING(255),
-        allowNull: false
+        allowNull: true
     },
     location: {
         type: DataTypes.STRING(255),
-        allowNull: false
+        allowNull: true
     },
     category_interest: {
-        type: DataTypes.JSON,
-        allowNull: false,
-        charset: 'utf8mb4',
-        collate: 'utf8mb4_unicode_ci'
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     refresh_token:{
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     created_at: {
         type: DataTypes.DATE,
