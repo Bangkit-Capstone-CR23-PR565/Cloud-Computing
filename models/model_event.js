@@ -30,18 +30,25 @@ const Event = db.define(
     stand_available: {
       type: DataTypes.INTEGER,
       allowNull: true,
+      defaultValue: 10,
     },
-    price_per_stand: {
+    stand_capacity: {
       type: DataTypes.INTEGER,
       allowNull: true,
+      defaultValue: 20,
+    },
+    price_per_stand: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      defaultValue: "250.000",
     },
     like_count: {
       type: DataTypes.INTEGER,
-      allowNull: false, // Set allowNull to false
-      defaultValue: 0, // Set defaultValue to 0
+      allowNull: true,
+      defaultValue: 0,
     },
     location: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       allowNull: true,
     },
     start_date: {
