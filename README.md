@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/eventmu.png" alt="Logo" height="180" />
+  <img src="eventmu.png" alt="Logo" height="180" />
 </p>
 
 <h1 align="center">Event.mu Web Service</h1>
