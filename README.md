@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/img/logo.jpg" alt="Logo" height="180" style="border-radius:10%"/>
+  <img src="/img/logo.jpg" alt="Logo" height="180" style="border-radius:50%"/>
 </p>
 
 <h1 align="center">boothUP! Web Service</h1>
