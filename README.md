@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/img/logo.jpg" alt="Logo" height="180" style="border-radius: 50% !important;">
+  <img src="/img/logo.jpg" alt="Logo" height="180">
 </p>
 
 <h1 align="center">boothUP! Web Service</h1>
@@ -49,5 +49,5 @@ Services available:
 ## Architecture
 
 <p align="center">
-  <img src="img/gcp_architecture.png" alt="GCP Architecture" />
+  <img src="img/gcp_architecture.png" alt="GCP Architecture" height="360"/>
 </p>
