@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="eventmu.png" alt="Logo" height="180" />
+  <img src="/img/logo.png" alt="Logo" height="180" />
 </p>
 
-<h1 align="center">Event.mu Web Service</h1>
+<h1 align="center">boothUP! Web Service</h1>
 
 Lorem ipsum dolor sit amet.
 
