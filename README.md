@@ -4,9 +4,14 @@
 
 <h1 align="center">boothUP! Web Service</h1>
 
-Lorem ipsum dolor sit amet.
+<div align="center">
 
-> Base url of this service is: http://localhost:8080/
+[![CC Member](https://img.shields.io/github/contributors/Bangkit-Capstone-CR23-PR565/Cloud-Computing?color=blue)](#cc-member)
+</div>
+
+boothUP! Web Service is a web service that allows SMEs to search for stall availability for them to sell their products based on their preferences, which are their location and what category of events/tradeshows they're interested to.
+
+> Base URL of this service is: http://localhost:8080/
 
 Services available:
 
@@ -38,3 +43,11 @@ Services available:
 
 - Recommendation Results
   <pre>GET  /users/{user_id}/recommendation-results</pre>
+  
+# Quick Look
+
+## Architecture
+
+<p align="center">
+  <img src="image/gcp_architecture.png" alt="GCP Architecture" />
+</p>
