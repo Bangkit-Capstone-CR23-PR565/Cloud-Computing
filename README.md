@@ -7,6 +7,7 @@
 <div align="center">
 
 [![CC Member](https://img.shields.io/github/contributors/Bangkit-Capstone-CR23-PR565/Cloud-Computing?color=blue)](#cc-member)
+  
 </div>
 
 boothUP! Web Service is a web service that allows SMEs to search for stall availability for them to sell their products based on their preferences, which are their location and what category of events/tradeshows they're interested to.
