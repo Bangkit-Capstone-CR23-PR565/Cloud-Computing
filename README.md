@@ -49,5 +49,5 @@ Services available:
 ## Architecture
 
 <p align="center">
-  <img src="image/gcp_architecture.png" alt="GCP Architecture" />
+  <img src="img/gcp_architecture.png" alt="GCP Architecture" />
 </p>
