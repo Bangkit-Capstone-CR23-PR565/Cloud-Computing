@@ -53,6 +53,20 @@ Services available:
   <img src="img/gcp_architecture.png" alt="GCP Architecture" height="360"/>
 </p>
 
+# Authentications
+This service uses token authentication for secure access. To access the service, create an account and obtain a token. The token is composed of two parts: accessToken and refreshToken, with the accessToken valid for 30 days. To refresh the token, send the refreshToken to the service. 
+Follow these steps to ensure secure access: 
+- Create an account, obtain a token.
+- Use the token to access the service,
+- And refresh the token if it expires.
+
+By following these steps, you can ensure secure access to the service and keep your data safe.
+
+# Features
+## Recommendations Service
+Recommendation service is work based on user's preferences; location and what kind of event/tradeshow category they're interested to. Those two are inputted in the registration process. After the system get the user's data, the machine learning process will match the user's preferences with the even/tradeshow preferences. The results are the best match of both.
+## Search Events by Location
+
 ## Dependencies
 
 * [Express](https://www.npmjs.com/package/express)
