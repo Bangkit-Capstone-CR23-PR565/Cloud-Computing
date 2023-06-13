@@ -12,7 +12,7 @@
 
 boothUP! Web Service is a web service that allows SMEs to search for stall availability for them to sell their products based on their preferences, which are their location and what category of events/tradeshows they're interested to.
 
-> Base URL of this service is: http://localhost:8080/
+> Base URL of this service is: https://web-service-eventmu.et.r.appspot.com/
 
 Services available:
 
