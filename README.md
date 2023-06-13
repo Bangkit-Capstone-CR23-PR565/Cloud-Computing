@@ -86,7 +86,7 @@ You can create your own database using the following image:
   <img src="img/erd.png" alt="Database ERD" />
 </p>
 
-<p align="center">Databases ERD</p>
+
 ## Dependencies
 
 * [Express](https://www.npmjs.com/package/express)
