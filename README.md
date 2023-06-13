@@ -19,7 +19,7 @@ Services available:
 - Authentications
   <pre>POST /register</pre>
   <pre>POST /login</pre>
-  <pre>DELETE /logout</pre>
+  <pre>POST /logout</pre>
 
 - Users
   <pre>GET  /users</pre>
