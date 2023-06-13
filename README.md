@@ -12,7 +12,7 @@
 
 boothUP! Web Service is a web service that allows SMEs to search for stall availability for them to sell their products based on their preferences, which are their location and what category of events/tradeshows they're interested to.
 
-> Base URL of this service is:  http://localhost:8080/ (The deployed base url is not included due to protecting data such as user information)
+> Base URL of this service is: http://localhost:8080/ (The deployed base url is not included due to protecting data such as user information)
 
 Services available:
 
@@ -20,7 +20,6 @@ Services available:
   <pre>POST /register</pre>
   <pre>POST /login</pre>
   <pre>POST /logout</pre>
-  <pre>GET /token</pre>
 
 - Users
   <pre>GET  /users</pre>
@@ -53,3 +52,14 @@ Services available:
 <p align="center">
   <img src="img/gcp_architecture.png" alt="GCP Architecture" height="360"/>
 </p>
+
+## Dependencies
+
+* [Express](https://www.npmjs.com/package/express)
+* [JWT](https://www.npmjs.com/package/@hapi/jwt)
+* [Bcrypt](https://www.npmjs.com/package/bcrypt)
+* [DotEnv](https://www.npmjs.com/package/dotenv)
+* [CORS](https://www.npmjs.com/package/cors)
+* [MySQL2](https://www.npmjs.com/package/mysql2)
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [Cookie-parser](https://www.npmjs.com/package/cookie-parser)
