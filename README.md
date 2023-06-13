@@ -97,3 +97,11 @@ You can create your own database using the following image:
 * [MySQL2](https://www.npmjs.com/package/mysql2)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [Cookie-parser](https://www.npmjs.com/package/cookie-parser)
+
+
+# API Documentation
+To learn more about the API and its features, we recommend that you read the API documentation. This documentation provides detailed information on how to use the API and its endpoints. By reviewing the documentation, you can gain a better understanding of the API and how it can be integrated into your project. 
+
+You can access the API documentation by visiting the following link. We encourage you to take the time to review the documentation thoroughly to ensure that you are using the API effectively and efficiently.
+
+API documentation: https://boothup.notion.site/Dokumentasi-API-9e59e1225d224cd2a46177c05e99307e?pvs=4
