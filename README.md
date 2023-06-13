@@ -64,9 +64,29 @@ By following these steps, you can ensure secure access to the service and keep y
 
 # Features
 ## Recommendations Service
-Recommendation service is work based on user's preferences; location and what kind of event/tradeshow category they're interested to. Those two are inputted in the registration process. After the system get the user's data, the machine learning process will match the user's preferences with the even/tradeshow preferences. The results are the best match of both.
+Recommendation service is work based on user's preferences: location and what kind of event/tradeshow category they're interested to. These two are inputted in the registration process. After the system get the user's data, the machine learning process will match the user's preferences with the event/tradeshow preferences. The results are the best match of both.
 ## Search Events by Location
 
+# Environment
+To successfully run this project, you must properly configure the required environment variables. These variables are necessary to ensure that the project functions as intended.
+Please be sure to set the following environment variables:
+```bash
+ACCESS_TOKEN_SECRET = {define your own token key}
+REFRESH_TOKEN_SECRET = {define your own refresh token}
+
+DB_HOST = {database host}
+DB_USER = {database username}
+DB_PASSWORD = {database password}
+DB_NAME = {database name}
+```
+Without properly setting these environment variables, the project may not function correctly.
+You can create your own database using the following image:
+
+<p align="center">
+  <img src="img/erd.png" alt="Database ERD" />
+</p>
+
+<p align="center">Databases ERD</p>
 ## Dependencies
 
 * [Express](https://www.npmjs.com/package/express)
