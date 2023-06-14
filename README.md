@@ -29,7 +29,7 @@ Services available:
   <pre>GET  /events</pre>
   <pre>GET  /events/{event_id}</pre>
 
-- Ratings
+- Ratings (not yet implemented in the front-end)
   <pre>GET  /ratings</pre>
   <pre>GET  /ratings/{rating_id}</pre>
   <pre>GET  /events/{event_id}/ratings</pre>
@@ -65,7 +65,8 @@ By following these steps, you can ensure secure access to the service and keep y
 # Features
 ## Recommendations Service
 Recommendation service is work based on user's preferences: location and what kind of event/tradeshow category they're interested to. These two are inputted in the registration process. After the system get the user's data, the machine learning process will match the user's preferences with the event/tradeshow preferences. The results are the best match of both.
-## Search Events by Location
+## Search Events by Location (not yet implemented in the front-end)
+Users can search events by their location, make it easier to the user to find suitable events.
 
 # Environment
 To successfully run this project, you must properly configure the required environment variables. These variables are necessary to ensure that the project functions as intended.
