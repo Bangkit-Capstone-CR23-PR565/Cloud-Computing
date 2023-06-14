@@ -99,7 +99,7 @@ export const Login = async(req,res) =>{
             maxAge: 24*60*60*1000,
             //secure: true
         });
-        res.json({accessToken});
+        res.json({id, accessToken});
     } catch (error) {
         console.log(error);
         if (error.code === 404) {
