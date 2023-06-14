@@ -4,7 +4,7 @@ import { Sequelize } from 'sequelize';
 export const getRecResults = async (req, res) => {
   try {
     const { user_id } = req.params;
-    const response = await fetch(`http://35.220.199.159/events/top-ranking-predictions/${user_id}`);
+    const response = await fetch(`http://35.220.199.159/events/top-recommendations/${user_id}`);
     const recommendations = await response.json();
 
     // Sort the recommendations array based on rating_prediction
